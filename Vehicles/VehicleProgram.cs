@@ -1,6 +1,6 @@
 ﻿namespace Vehicles
 {
-    internal class Program
+    internal class VehicleProgram
     {
         static void Main(string[] args)
         {
