@@ -4,9 +4,35 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // --------- Racing Vehicles! ------------------
+            // Instantiate some cars 
+            Car car1 = new Car("Toyota","Prius");
+            Car car2 = new Car("Ford", "Mustang");
+
+            // Instantiate some motorcycles 
+            Motorcycle bike1 = new Motorcycle("Yamaha", "R1", false);
+            Motorcycle bike2 = new Motorcycle("Honda", "Gold Wing", true);
+
+            // Add all instances to a list of Vehicles 
+            Vehicle[] vehicles = { car1, car2, bike1, bike2 };
+
+            // Starting engines for each vehicle
+            foreach (Vehicle vehicle in vehicles) 
+            {
+                vehicle.StartEngine();
+            }
+
+            Console.WriteLine("Race started!");
+
+            foreach (Vehicle vehicle in vehicles) 
+            {
+                vehicle.Drive();
+                Console.WriteLine("---------------------------------------------");
+            }
+            Console.WriteLine("Race finished!");
         }
 
+        // Creating abstract Vehicle class
         public abstract class Vehicle
         { 
             public string Make { get; set; }
@@ -91,6 +117,7 @@
             }
         }
 
+        // Creating abstract Engine class
         public abstract class Engine 
         { 
             public bool Running { get; set; }
